@@ -2,4 +2,7 @@
 Test project to help me learn go and google cloud services at the same time!
 
 ## What it's about
-TODO
+A small web-app that uses sever l Google cloud services.
+
+### Cloud Storage
+The first test is just to use cloud storage for a few page templates.
