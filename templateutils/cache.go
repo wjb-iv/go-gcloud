@@ -51,9 +51,12 @@ func NewCache(templateBucket string) *Cache {
 // Get - retrieves the named template from cache, or if not found
 //       attempts to load it from a Google storage bucket
 func (c *Cache) Get(templateName string) *template.Template {
+	log.Printf("Looking for template name: %s...", templateName)
 	if val, ok := c.cacheData.get(templateName); ok {
+		log.Printf("Found template: %s in template cache.", templateName)
 		return val
 	}
+	log.Printf("Template: %s NOT in template cache, loading from bucket: %s", templateName, c.bucketName)
 	if tmplStr := c.getObject(templateName + ".html"); tmplStr != "" {
 		t := template.New(templateName)
 		t, _ = t.Parse(tmplStr)
