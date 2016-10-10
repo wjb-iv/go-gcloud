@@ -6,3 +6,5 @@ A small web-app that uses several Google cloud services.
 
 ### Cloud Storage
 The first test is just to use cloud storage for a few page templates within an http server app.
+
+Merge test
